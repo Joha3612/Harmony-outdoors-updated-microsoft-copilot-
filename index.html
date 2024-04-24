@@ -1,46 +1,59 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmony Outdoors</title>
+    <style>
+        /* Your existing CSS styles */
 
-const useStyles = makeStyles((theme) => ({
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 120,
-  },
-}));
+        /* Add any additional styles here */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Harmony Outdoors</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#about">About Us</a>
+        </nav>
+    </header>
 
-export default function SimpleSelect() {
-  const classes = useStyles();
-  const [age, setAge] = React.useState('');
+    <section class="product">
+        <div>
+            <h2>Product 1</h2>
+            <p>Weight: 2 lbs</p>
+            <p>Capacity: 30L</p>
+            <p>Material: Nylon</p>
+        </div>
+        <img src="product1.jpg" alt="Product 1 Image">
+    </section>
 
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
+    <!-- Repeat similar product sections for other products -->
 
-  return (
-    <div>
-      <FormControl className={classes.formControl}>
-        <InputLabel id="demo-simple-select-label">Age</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={age}
-          onChange={handleChange}
-        >
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </FormControl>
+    <footer>
+        © 2024 Harmony Outdoors. All rights reserved.
+        <div>
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <!-- Add more social media icons here -->
+        </div>
+    </footer>
 
-      <label htmlFor="name">Your Name</label>
-      <input type="text" id="name" name="name" placeholder="Your Name" required />
+    <section id="about">
+        <h2>About Us</h2>
+        <form action="submit.php" method="post">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
 
-      <label htmlFor="email">Your Email</label>
-      <input type="email" id="email" name="email" placeholder="Your Email" required />
-    </div>
-  );
-}
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+</body>
+</html>
